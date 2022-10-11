@@ -5,7 +5,7 @@
 	<key>CFBundleExecutable</key>
 	<string>BikeKit</string>
 	<key>CFBundleIdentifier</key>
-	<string>fr.beapp.lesson.BikeKit</string>
+	<string>fr.beapp.lesson.shared.BikeKit</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

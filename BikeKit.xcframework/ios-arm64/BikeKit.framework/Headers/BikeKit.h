@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class BikeKitContractDtoCompanion, BikeKitContractEntity, BikeKitRestDataSource, BikeKitStationEntity, BikeKitStationDTOState, BikeKitStationDTOCompanion, BikeKitStationDTOPosition, BikeKitStationDTOPositionCompanion, BikeKitKotlinEnumCompanion, BikeKitKotlinEnum<E>, BikeKitStationDTOStateCompanion, BikeKitKotlinArray<T>, BikeKitKotlinx_serialization_jsonJson, BikeKitKotlinThrowable, BikeKitKotlinException, BikeKitKotlinRuntimeException, BikeKitKotlinIllegalStateException, BikeKitKotlinx_serialization_coreSerializersModule, BikeKitKotlinx_serialization_jsonJsonDefault, BikeKitKotlinx_serialization_jsonJsonElement, BikeKitKotlinx_serialization_jsonJsonConfiguration, BikeKitKotlinx_serialization_coreSerialKind, BikeKitKotlinNothing, BikeKitKotlinx_serialization_jsonJsonElementCompanion;
+@class BikeKitContractDtoCompanion, BikeKitContractEntity, BikeKitRestDataSource, BikeKitStationEntity, BikeKitStationDTOCompanion, BikeKitStationDTOPosition, BikeKitStationDTOState, BikeKitStationDTOPositionCompanion, BikeKitKotlinEnumCompanion, BikeKitKotlinEnum<E>, BikeKitStationDTOStateCompanion, BikeKitKotlinArray<T>, BikeKitIosCache, NSString, BikeKitContractEntityCompanion, BikeKitKotlinx_serialization_jsonJson, BikeKitKotlinThrowable, BikeKitKotlinException, BikeKitKotlinRuntimeException, BikeKitKotlinIllegalStateException, BikeKitKotlinx_serialization_coreSerializersModule, BikeKitKotlinx_serialization_jsonJsonDefault, BikeKitKotlinx_serialization_jsonJsonElement, BikeKitKotlinx_serialization_jsonJsonConfiguration, BikeKitKotlinx_serialization_coreSerialKind, BikeKitKotlinNothing, BikeKitKotlinx_serialization_jsonJsonElementCompanion;
 
 @protocol BikeKitKotlinx_serialization_coreKSerializer, BikeKitKtor_client_loggingLogger, BikeKitKotlinComparable, BikeKitKotlinx_serialization_coreEncoder, BikeKitKotlinx_serialization_coreSerialDescriptor, BikeKitKotlinx_serialization_coreSerializationStrategy, BikeKitKotlinx_serialization_coreDecoder, BikeKitKotlinx_serialization_coreDeserializationStrategy, BikeKitKotlinIterator, BikeKitKotlinx_serialization_coreSerialFormat, BikeKitKotlinx_serialization_coreStringFormat, BikeKitKotlinx_serialization_coreCompositeEncoder, BikeKitKotlinAnnotation, BikeKitKotlinx_serialization_coreCompositeDecoder, BikeKitKotlinx_serialization_coreSerializersModuleCollector, BikeKitKotlinKClass, BikeKitKotlinKDeclarationContainer, BikeKitKotlinKAnnotatedElement, BikeKitKotlinKClassifier;
 
@@ -209,55 +209,13 @@ __attribute__((swift_name("RestDataSource")))
  @note This method converts instances of CancellationException to errors.
  Other uncaught Kotlin exceptions are fatal.
 */
-- (void)getContractsWithCompletionHandler:(void (^)(NSArray<BikeKitContractEntity *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getContracts(completionHandler:)")));
+- (void)getContractsFromCache:(BOOL)fromCache completionHandler:(void (^)(NSArray<BikeKitContractEntity *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getContracts(fromCache:completionHandler:)")));
 
 /**
  @note This method converts instances of CancellationException to errors.
  Other uncaught Kotlin exceptions are fatal.
 */
 - (void)getStationsOfCityCity:(NSString *)city completionHandler:(void (^)(NSArray<BikeKitStationEntity *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getStationsOfCity(city:completionHandler:)")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("ContractEntity")))
-@interface BikeKitContractEntity : BikeKitBase
-- (instancetype)initWithCities:(NSArray<NSString *> * _Nullable)cities commercialName:(NSString *)commercialName countryCode:(NSString *)countryCode name:(NSString *)name __attribute__((swift_name("init(cities:commercialName:countryCode:name:)"))) __attribute__((objc_designated_initializer));
-- (NSArray<NSString *> * _Nullable)component1 __attribute__((swift_name("component1()"))) __attribute__((deprecated("use corresponding property instead")));
-- (NSString *)component2 __attribute__((swift_name("component2()"))) __attribute__((deprecated("use corresponding property instead")));
-- (NSString *)component3 __attribute__((swift_name("component3()"))) __attribute__((deprecated("use corresponding property instead")));
-- (NSString *)component4 __attribute__((swift_name("component4()"))) __attribute__((deprecated("use corresponding property instead")));
-- (BikeKitContractEntity *)doCopyCities:(NSArray<NSString *> * _Nullable)cities commercialName:(NSString *)commercialName countryCode:(NSString *)countryCode name:(NSString *)name __attribute__((swift_name("doCopy(cities:commercialName:countryCode:name:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSArray<NSString *> * _Nullable cities __attribute__((swift_name("cities")));
-@property (readonly) NSString *commercialName __attribute__((swift_name("commercialName")));
-@property (readonly) NSString *countryCode __attribute__((swift_name("countryCode")));
-@property (readonly) NSString *name __attribute__((swift_name("name")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("StationEntity")))
-@interface BikeKitStationEntity : BikeKitBase
-- (instancetype)initWithNumber:(id)number name:(NSString *)name longitude:(double)longitude latitude:(double)latitude state:(BikeKitStationDTOState *)state address:(NSString *)address contractName:(NSString *)contractName __attribute__((swift_name("init(number:name:longitude:latitude:state:address:contractName:)"))) __attribute__((objc_designated_initializer));
-- (id)component1 __attribute__((swift_name("component1()"))) __attribute__((deprecated("use corresponding property instead")));
-- (NSString *)component2 __attribute__((swift_name("component2()"))) __attribute__((deprecated("use corresponding property instead")));
-- (double)component3 __attribute__((swift_name("component3()"))) __attribute__((deprecated("use corresponding property instead")));
-- (double)component4 __attribute__((swift_name("component4()"))) __attribute__((deprecated("use corresponding property instead")));
-- (BikeKitStationDTOState *)component5 __attribute__((swift_name("component5()"))) __attribute__((deprecated("use corresponding property instead")));
-- (NSString *)component6 __attribute__((swift_name("component6()"))) __attribute__((deprecated("use corresponding property instead")));
-- (NSString *)component7 __attribute__((swift_name("component7()"))) __attribute__((deprecated("use corresponding property instead")));
-- (BikeKitStationEntity *)doCopyNumber:(id)number name:(NSString *)name longitude:(double)longitude latitude:(double)latitude state:(BikeKitStationDTOState *)state address:(NSString *)address contractName:(NSString *)contractName __attribute__((swift_name("doCopy(number:name:longitude:latitude:state:address:contractName:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *address __attribute__((swift_name("address")));
-@property (readonly) NSString *contractName __attribute__((swift_name("contractName")));
-@property (readonly) double latitude __attribute__((swift_name("latitude")));
-@property (readonly) double longitude __attribute__((swift_name("longitude")));
-@property (readonly) NSString *name __attribute__((swift_name("name")));
-@property (readonly) id number __attribute__((swift_name("number")));
-@property (readonly) BikeKitStationDTOState *state __attribute__((swift_name("state")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -349,6 +307,79 @@ __attribute__((swift_name("StationDTO.StateCompanion")))
 + (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) BikeKitStationDTOStateCompanion *shared __attribute__((swift_name("shared")));
 - (id<BikeKitKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("IosCache")))
+@interface BikeKitIosCache : BikeKitBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)iosCache __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) BikeKitIosCache *shared __attribute__((swift_name("shared")));
+@property NSString *cacheDirectory __attribute__((swift_name("cacheDirectory")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Storage")))
+@interface BikeKitStorage : BikeKitBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (NSString * _Nullable)readKey:(NSString *)key __attribute__((swift_name("read(key:)")));
+- (void)writeKey:(NSString *)key value:(NSString *)value __attribute__((swift_name("write(key:value:)")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("ContractEntity")))
+@interface BikeKitContractEntity : BikeKitBase
+- (instancetype)initWithCities:(NSArray<NSString *> * _Nullable)cities commercialName:(NSString *)commercialName countryCode:(NSString *)countryCode name:(NSString *)name __attribute__((swift_name("init(cities:commercialName:countryCode:name:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) BikeKitContractEntityCompanion *companion __attribute__((swift_name("companion")));
+- (NSArray<NSString *> * _Nullable)component1 __attribute__((swift_name("component1()"))) __attribute__((deprecated("use corresponding property instead")));
+- (NSString *)component2 __attribute__((swift_name("component2()"))) __attribute__((deprecated("use corresponding property instead")));
+- (NSString *)component3 __attribute__((swift_name("component3()"))) __attribute__((deprecated("use corresponding property instead")));
+- (NSString *)component4 __attribute__((swift_name("component4()"))) __attribute__((deprecated("use corresponding property instead")));
+- (BikeKitContractEntity *)doCopyCities:(NSArray<NSString *> * _Nullable)cities commercialName:(NSString *)commercialName countryCode:(NSString *)countryCode name:(NSString *)name __attribute__((swift_name("doCopy(cities:commercialName:countryCode:name:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (BOOL)matchQuery:(NSString *)query __attribute__((swift_name("match(query:)")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSArray<NSString *> * _Nullable cities __attribute__((swift_name("cities")));
+@property (readonly) NSString *commercialName __attribute__((swift_name("commercialName")));
+@property (readonly) NSString *countryCode __attribute__((swift_name("countryCode")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("ContractEntity.Companion")))
+@interface BikeKitContractEntityCompanion : BikeKitBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) BikeKitContractEntityCompanion *shared __attribute__((swift_name("shared")));
+- (id<BikeKitKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("StationEntity")))
+@interface BikeKitStationEntity : BikeKitBase
+- (instancetype)initWithNumber:(id)number name:(NSString *)name longitude:(double)longitude latitude:(double)latitude state:(BikeKitStationDTOState *)state address:(NSString *)address contractName:(NSString *)contractName __attribute__((swift_name("init(number:name:longitude:latitude:state:address:contractName:)"))) __attribute__((objc_designated_initializer));
+- (id)component1 __attribute__((swift_name("component1()"))) __attribute__((deprecated("use corresponding property instead")));
+- (NSString *)component2 __attribute__((swift_name("component2()"))) __attribute__((deprecated("use corresponding property instead")));
+- (double)component3 __attribute__((swift_name("component3()"))) __attribute__((deprecated("use corresponding property instead")));
+- (double)component4 __attribute__((swift_name("component4()"))) __attribute__((deprecated("use corresponding property instead")));
+- (BikeKitStationDTOState *)component5 __attribute__((swift_name("component5()"))) __attribute__((deprecated("use corresponding property instead")));
+- (NSString *)component6 __attribute__((swift_name("component6()"))) __attribute__((deprecated("use corresponding property instead")));
+- (NSString *)component7 __attribute__((swift_name("component7()"))) __attribute__((deprecated("use corresponding property instead")));
+- (BikeKitStationEntity *)doCopyNumber:(id)number name:(NSString *)name longitude:(double)longitude latitude:(double)latitude state:(BikeKitStationDTOState *)state address:(NSString *)address contractName:(NSString *)contractName __attribute__((swift_name("doCopy(number:name:longitude:latitude:state:address:contractName:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *address __attribute__((swift_name("address")));
+@property (readonly) NSString *contractName __attribute__((swift_name("contractName")));
+@property (readonly) double latitude __attribute__((swift_name("latitude")));
+@property (readonly) double longitude __attribute__((swift_name("longitude")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
+@property (readonly) id number __attribute__((swift_name("number")));
+@property (readonly) BikeKitStationDTOState *state __attribute__((swift_name("state")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
